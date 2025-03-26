@@ -25,6 +25,11 @@ This will build and start both the backend and frontend services.
     yarn
     yarn serve
 
+### E2E testing
+
+    cd frontend
+    yarn cy:open
+
 # Assignment Completion Summary
 
 ## Changes & Implementations
