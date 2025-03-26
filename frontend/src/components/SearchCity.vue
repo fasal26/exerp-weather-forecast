@@ -6,6 +6,7 @@
       </div>
 
       <GMapAutocomplete ref="autocomplete"
+        id="loc-search"
         class="block w-full px-4 py-2 pl-10 pr-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none"
         placeholder="Search for a location..." @place_changed="placeChanged" />
 

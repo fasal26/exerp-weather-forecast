@@ -1,0 +1,19 @@
+{
+    "latitude": 55.6761,
+    "longitude": 12.5683,
+    "elevation": 14,
+    "current_weather": {
+      "temperature": 10.5,
+      "windspeed": 5.2,
+      "winddirection": 180,
+      "weathercode": 1,
+      "time": "2025-03-26T12:00"
+    },
+    "current_weather_units": {
+      "temperature": "°C",
+      "windspeed": "km/h",
+      "winddirection": "°",
+      "weathercode": "wmo code",
+      "time": "iso8601"
+    }
+  }
