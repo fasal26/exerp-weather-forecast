@@ -2,6 +2,17 @@
 
 ## Installation
 
+You can run the application in two ways:
+
+### 1️⃣ Using Docker (Recommended)
+Ensure you have Docker installed and running, then execute:
+
+    docker compose up --build
+
+This will build and start both the backend and frontend services.
+
+### 2️⃣ Running Manually
+
 ### backend
 
     cd backend
