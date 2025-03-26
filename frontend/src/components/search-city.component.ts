@@ -1,20 +1,48 @@
-import { Options, Vue } from 'vue-class-component';
+import { Options, Vue } from "vue-class-component";
+import CloseIcon from "@/shared/icons/CloseIcon.vue";
+import SearchIcon from "@/shared/icons/SearchIcon.vue";
+import CurrentLocationBtn from "@/shared/ui/CurrentLocationBtn.vue";
+import { Ref, Watch } from "vue-property-decorator";
+import { ComponentPublicInstance } from "vue";
+import { mapGetters } from "vuex";
 
 @Options({
-  props: {
-  }
+  props: {},
+  components: {
+    SearchIcon,
+    CloseIcon,
+    CurrentLocationBtn
+  },
+  computed: {
+    ...mapGetters({
+      currentLoc: "currentLoc",
+    }),
+  },
 })
 export default class SearchCity extends Vue {
+  @Ref("autocomplete") autocomplete!: ComponentPublicInstance;
 
-  selectedPlace: { lat: number; lng: number } | null = null;
-
-  placeChanged(place: any) {
-    this.selectedPlace = {
-      lat: place.geometry.location.lat(),
-      lng: place.geometry.location.lng(),
-    };
-    this.$emit('placeChanged', this.selectedPlace)
+  // watcher to update the input location to the user current location
+  @Watch("currentLoc")
+  onCurrentLocChange(newVal: string) {
+    if (this.autocomplete && newVal) {
+      this.autocomplete.$el.value = newVal;
+    }
   }
 
+  placeChanged(place: google.maps.places.PlaceResult) {
+    if (!place || !place.geometry || !place.geometry.location) return;
+    
+    this.$emit("placeChanged", {
+      lat: place.geometry.location.lat(),
+      lng: place.geometry.location.lng(),
+    });
+  }
 
+  clearInput() {
+    if (this.autocomplete) {
+      this.autocomplete.$el.value = "";
+      this.autocomplete.$el.focus();
+    }
+  }
 }

@@ -1,19 +1,22 @@
 <template>
   <div>
-    <h3>Type a city name to search</h3>
-    <GMapAutocomplete @place_changed="placeChanged" class="gmap-autocompolete"/>
+    <div class="relative md:w-1/2 lg:w-2/5 flex gap-[5px]">
+      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+        <SearchIcon />
+      </div>
 
-    <div>You can also click a location on the map to view the weather forecast</div>
-    <!-- TODO add click event -->
-    <GMapMap
-      v-if="selectedPlace"
-      class="gmap-class"
-      :center="selectedPlace"
-      :zoom="7"
-      map-type-id="roadmap"
-      ref="gmap"
-    >
-    </GMapMap>
+      <GMapAutocomplete ref="autocomplete"
+        class="block w-full px-4 py-2 pl-10 pr-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none"
+        placeholder="Search for a location..." @place_changed="placeChanged" />
+
+      <div class="absolute inset-y-0 right-0 flex items-center pr-[65px]">
+        <button type="button" class="focus:outline-none" @click="clearInput">
+          <CloseIcon />
+        </button>
+      </div>
+
+      <CurrentLocationBtn @click="$emit('currentLocation')" />
+    </div>
   </div>
 </template>
 
@@ -21,33 +24,6 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-.gmap-class {
-  height: 500px;
-  width: 100%;
-}
-.gmap-autocompolete {
-  width: 250px;
-  margin: 10px auto;
-}
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-.vue-map-container {
-  height: 500px;
-  width: 100%;
-}
-
 .pac-logo:after {
   display: none;
 }
@@ -61,17 +37,6 @@ a {
   padding: 0 4px;
   text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap;
-  line-height: 40px;
   text-align: left;
-  border-top: 1px solid #e6e6e6;
-  font-size: 11px;
-  color: #515151;
-}
-@tailwind components;
-@layer components {
-  .pac-target-input {
-    @apply w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-primary-100 focus:border-primary-300;
-  }
 }
 </style>

@@ -14,29 +14,35 @@
     yarn
     yarn serve
 
-## TODO:
+# Assignment Completion Summary
 
-- Please *copy* the project into your own github account and work on it there.
-- Please *do not* fork the project, or make PRs to this repo.
-- The location can be chosen either by searching for a city name, or by clicking on the map.
-- Please make sure you check for errors and display them to the user. Also make sure you handle the loading state.
-- Use TailwindCSS for styling.
-- Improve the UI/UX of the app. You can write your own CSS. 
-- Please make sure the app is responsive.
+## Changes & Implementations
 
+- ✅ **Project Copied to Personal GitHub**  
+  - The project has been cloned into my own repository instead of forking.  
 
-## Notes
+- ✅ **Location Selection**  
+  - Users can select a location **either by searching for a city** or **clicking on the map**.  
 
-- Please make sure you create a new branch for your work, and make a PR to main when you are done (in your own github repo).
-- Please make sure the commits are atomic and meaningful.
-- Please make sure the code is well formatted and easy to read.
-- Bonus points for adding any new functionality you think would be useful. This should be in separate commits with a clear description of what you did.
+- ✅ **Error Handling & Loading State**  
+  - Implemented proper error handling with **user-friendly messages**.  
+  - Added **loading indicators** to enhance user experience.  
 
-- Bonus points for adding a docker-compose file to run the app.
-- Bonus points for adding a CI/CD pipeline to run the tests and deploy the app.
-- Bonus points for adding Cypress tests.
-- All bonus points are optional
+- ✅ **TailwindCSS for Styling**  
+  - Used **TailwindCSS** for consistent styling across the app.  
+  - Custom CSS improvements made where necessary.  
 
-## Screenshot
+- ✅ **UI/UX Enhancements**  
+  - Improved layout for better readability and usability.  
+  - Optimized for smooth interaction.  
 
-![](screenshot.png)
+- ✅ **Responsive Design**  
+  - Ensured the app works well across **various screen sizes**.
+
+### 🚀 Extra Features Added  
+
+- ✅ **Current Location Support**  
+  - Integrated fetching the **user’s current location** and displaying weather information accordingly.  
+
+- ✅ **Dynamic Search Fields**  
+  - The search field dynamically updates when the user **changes the location on the map** or selects **current location**.  

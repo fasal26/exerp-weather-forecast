@@ -1,19 +1,25 @@
 import { Options, Vue } from 'vue-class-component';
 import SearchCity from '@/components/SearchCity.vue';
 import WeatherForecast from '@/components/WeatherForecast.vue';
+import GoogleMap from '@/components/GoogleMap.vue';
+import { useLocation } from '@/composables/useLocation';
 
 @Options({
   components: {
     SearchCity,
     WeatherForecast,
+    GoogleMap
   },
 })
 export default class HomeView extends Vue {
-  selectedPlace: { lat: number; lng: number } | null = null;
-  placeChanged(data: { lat: number; lng: number }) {
-    this.selectedPlace = {
-      lat: data.lat,
-      lng: data.lng,
-    };
+  private readonly location = useLocation();
+  get selectedPlace() {
+    return this.location.selectedPlace;
+  }
+  get placeChanged() {
+    return this.location.placeChanged;
+  }
+  get getCurrentLocation() {
+    return this.location.getCurrentLocation;
   }
 }
