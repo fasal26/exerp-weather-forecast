@@ -26,6 +26,7 @@ export function useLocation() {
         },
         (error) => {
           console.error('Error getting location:', error);
+          store.commit('SHOW_TOAST','Location denied! Enable location access to fetch weather details.')
         }
       );
     } else {
