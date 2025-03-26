@@ -1,6 +1,6 @@
 <template>
     <button 
-        class="flex items-center justify-center p-4 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300 z-10"
+        class="flex items-center justify-center p-4 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors focus:outline-none z-10"
         title="Get current location"
       >
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -9,7 +9,3 @@
         </svg>
     </button>
 </template>
-
-<script setup lang="ts">
-
-</script>

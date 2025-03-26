@@ -18,8 +18,6 @@
 <script lang="ts" src="./google-map.component.ts"></script>
 
 <style scoped>
-
-
 .vue-map-container {
   overflow: hidden;
   border-radius: 15px;

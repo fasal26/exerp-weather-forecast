@@ -9,14 +9,14 @@
         </button>
       </p>
     </ErrorPage>
-  </template>
+</template>
 
 <script setup lang="ts">
 import ErrorPage from "./ErrorPage.vue"
 
 const reloadPage = () => {
-    if (typeof window !== undefined) {
-        window.location.reload()
-    }
+  if (typeof window !== undefined) {
+      window.location.reload()
+  }
 }
 </script>

@@ -41,8 +41,9 @@ export default class SearchCity extends Vue {
 
   clearInput() {
     if (this.autocomplete) {
-      this.autocomplete.$el.value = "";
-      this.autocomplete.$el.focus();
+      const inputEl = this.autocomplete.$el
+      inputEl.value = "";
+      inputEl.focus();
     }
   }
 }
