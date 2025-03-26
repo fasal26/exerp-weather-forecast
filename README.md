@@ -62,3 +62,10 @@ This will build and start both the backend and frontend services.
 
 - ✅ **Dynamic Search Fields**  
   - The search field dynamically updates when the user **changes the location on the map** or selects **current location**.  
+
+- ✅ **Cypress Integration**  
+  - Added **Cypress** for end-to-end testing.
+
+- ✅ **Docker Support**  
+  - Added **Docker integration** for running both frontend and backend in a single container
+  - **Enabled live reloading in Docker** to reflect code changes instantly without restarting the container, improving development workflow. 
