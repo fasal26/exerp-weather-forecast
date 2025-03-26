@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "cy:open": "cypress open"
   },
   "dependencies": {
     "@fawmi/vue-google-maps": "^0.9.79",
@@ -31,6 +32,7 @@
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "@vue/eslint-config-typescript": "^9.1.0",
+    "cypress": "^14.2.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
     "lint-staged": "^11.1.2",
